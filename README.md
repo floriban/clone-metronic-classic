@@ -1,5 +1,45 @@
-# Vue 3 + TypeScript + Vite
+# Clone Metronic Classic
 
-This template should help get you started developing with Vue 3 and TypeScript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+Clon del dashboard **Metronic Classic**, construido desde cero usando **Vue.js 3** y **Tailwind CSS**.
 
-Learn more about the recommended Project Setup and IDE Support in the [Vue Docs TypeScript Guide](https://vuejs.org/guide/typescript/overview.html#project-setup).
+Este proyecto busca replicar el estilo y la experiencia de Metronic Classic con una base moderna, modular y fácil de mantener en Vue.
+
+---
+
+## 🚀 Características
+
+-   🌟 **Vue 3**
+-   💨 **Tailwind CSS**
+
+---
+
+## 📸 Demo
+
+👉 [Ver demo en Netlify](https://brilliant-tartufo-6ad09e.netlify.app/)
+
+---
+
+## 🛠️ Tecnologías
+
+-   [Vue.js 3](https://vuejs.org/)
+-   [TypeScript](https://www.typescriptlang.org/)
+-   [Vite](https://vitejs.dev/)
+-   [Tailwind CSS](https://tailwindcss.com/)
+-   [FontAwesome](https://fontawesome.com/) (íconos)
+
+---
+
+## 📑 Requisitos previos
+
+-   Node.js ≥ 16
+-   npm, pnpm o yarn
+
+---
+
+## 🔥 Instalación
+
+```bash
+git clone https://github.com/floriban/clone-metronic-classic.git
+cd clone-metronic-classic
+npm install
+```
