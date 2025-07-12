@@ -1,8 +1,8 @@
 # Clone Metronic Classic
 
-Clon del dashboard **Metronic Classic**, construido desde cero usando **Vue.js 3** y **Tailwind CSS**.
+Clon del dashboard **Metronic Classic**, usando **Vue.js 3** y **Tailwind CSS**.
 
-Este proyecto busca replicar el estilo y la experiencia de Metronic Classic con una base moderna, modular y fácil de mantener en Vue.
+Este proyecto no busca ser una copia exacta al Metronic Classic original, pero si tener una base concreta, más liviana y accesible para proyectos futuros.
 
 ---
 
