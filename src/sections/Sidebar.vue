@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref, type Ref } from 'vue';
-import logo from '@/assets/images/logo.png';
+import logo from '@assets/images/logo.png';
 
 const sidebarOpen: Ref<boolean> = ref(false);
 const sidebarStatic: Ref<boolean> = ref(false);
@@ -38,7 +38,7 @@ const openSubmenu = (index: number) => {
 </script>
 
 <template>
-    <div :class="['absolute overflow-hidden z-10 bg-gray-900 text-white w-[58px] h-full whitespace-nowrap transition-all duration-200 ease-in-out', sidebarOpen ? 'w-[250px]' : 'w-[58px]']"
+    <div :class="['fixed overflow-hidden z-10 bg-gray-900 text-white w-[58px] h-full whitespace-nowrap transition-all duration-200 ease-in-out', sidebarOpen ? 'w-[250px]' : 'w-[58px]']"
         @mouseenter="openSidebar()" @mouseleave="openSidebar()">
         <div class="flex justify-between items-center bg-gray-950 px-5 h-16">
             <a href="/">
@@ -62,29 +62,53 @@ const openSubmenu = (index: number) => {
                 </li>
 
                 <li>
-                    <a href="#"
+                    <router-link to="/"
                         class="px-5 py-3 hover:bg-gray-950 transition flex items-center text-gray-400 hover:text-white group">
                         <span class="mr-6 group-hover:text-blue-400 transition">
-                            <i class="fa-solid fa-gauge-high group-hover:scale-125 transition"></i>
+                            <i class="fa-solid fa-house group-hover:scale-125 transition"></i>
                         </span>
-                        <span>Dashboard</span>
-                    </a>
+                        <span>Inicio</span>
+                    </router-link>
                 </li>
 
                 <li>
-                    <a href="#"
+                    <a href="javascript:;"
                         :class="['px-5 py-3 hover:bg-gray-950 transition flex justify-between items-center text-gray-400 hover:text-white group', menuActive === 0 ? 'bg-gray-950' : '']"
                         @click="openSubmenu(0)">
                         <div>
                             <span class="mr-6 group-hover:text-blue-400 transition">
                                 <i
-                                    :class="['fa-solid fa-users-gear group-hover:scale-125 transition', menuActive === 0 ? 'text-blue-400 scale-125' : '']"></i>
+                                    :class="['fa-solid fa-layer-group group-hover:scale-125 transition', menuActive === 0 ? 'text-blue-400 scale-125' : '']"></i>
+                            </span>
+                            <span>UI Components</span>
+                        </div>
+                        <i class="fa-solid fa-angle-right"></i>
+                    </a>
+                    <ul :class="['bg-gray-700', subMenuOpen === 0 ? 'block' : 'hidden']">
+                        <li>
+                            <router-link to="/botones"
+                                class="pl-10 pr-5 py-3 hover:bg-gray-950 transition flex items-center text-gray-400 hover:text-white group">
+                                <span class="size-1.5 bg-gray-400 rounded-full mr-2 group-hover:bg-blue-400"></span>
+                                Botones
+                            </router-link>
+                        </li>
+                    </ul>
+                </li>
+
+                <!-- <li>
+                    <a href="javascript:;"
+                        :class="['px-5 py-3 hover:bg-gray-950 transition flex justify-between items-center text-gray-400 hover:text-white group', menuActive === 1 ? 'bg-gray-950' : '']"
+                        @click="openSubmenu(1)">
+                        <div>
+                            <span class="mr-6 group-hover:text-blue-400 transition">
+                                <i
+                                    :class="['fa-solid fa-users-gear group-hover:scale-125 transition', menuActive === 1 ? 'text-blue-400 scale-125' : '']"></i>
                             </span>
                             <span>Usuarios y Roles</span>
                         </div>
                         <i class="fa-solid fa-angle-right"></i>
                     </a>
-                    <ul :class="['bg-gray-700', subMenuOpen === 0 ? 'block' : 'hidden']">
+                    <ul :class="['bg-gray-700', subMenuOpen === 1 ? 'block' : 'hidden']">
                         <li>
                             <a href="#"
                                 class="pl-10 pr-5 py-3 hover:bg-gray-950 transition flex items-center text-gray-400 hover:text-white group">
@@ -103,19 +127,19 @@ const openSubmenu = (index: number) => {
                 </li>
 
                 <li>
-                    <a href="#"
-                        :class="['px-5 py-3 hover:bg-gray-950 transition flex justify-between items-center text-gray-400 hover:text-white group', menuActive === 1 ? 'bg-gray-950' : '']"
-                        @click="openSubmenu(1)">
+                    <a href="javascript:;"
+                        :class="['px-5 py-3 hover:bg-gray-950 transition flex justify-between items-center text-gray-400 hover:text-white group', menuActive === 2 ? 'bg-gray-950' : '']"
+                        @click="openSubmenu(2)">
                         <div>
                             <span class="mr-6 group-hover:text-blue-400 transition">
                                 <i
-                                    :class="['fa-solid fa-cubes group-hover:scale-125 transition', menuActive === 1 ? 'text-blue-400 scale-125' : '']"></i>
+                                    :class="['fa-solid fa-cubes group-hover:scale-125 transition', menuActive === 2 ? 'text-blue-400 scale-125' : '']"></i>
                             </span>
                             <span>Módulos</span>
                         </div>
                         <i class="fa-solid fa-angle-right"></i>
                     </a>
-                    <ul :class="['bg-gray-700', subMenuOpen === 1 ? 'block' : 'hidden']">
+                    <ul :class="['bg-gray-700', subMenuOpen === 2 ? 'block' : 'hidden']">
                         <li>
                             <a href="#"
                                 class="pl-10 pr-5 py-3 hover:bg-gray-950 transition flex items-center text-gray-400 hover:text-white group">
@@ -138,16 +162,6 @@ const openSubmenu = (index: number) => {
                             </a>
                         </li>
                     </ul>
-                </li>
-
-                <li>
-                    <a href="#"
-                        class="px-5 py-3 hover:bg-gray-950 transition flex items-center text-gray-400 hover:text-white group">
-                        <span class="mr-6 group-hover:text-blue-400 transition">
-                            <i class="fa-solid fa-layer-group group-hover:scale-125 transition"></i>
-                        </span>
-                        <span>UI Components</span>
-                    </a>
                 </li>
 
                 <li>
@@ -178,7 +192,7 @@ const openSubmenu = (index: number) => {
                         </span>
                         <span>Configuración</span>
                     </a>
-                </li>
+                </li> -->
             </ul>
         </div>
     </div>

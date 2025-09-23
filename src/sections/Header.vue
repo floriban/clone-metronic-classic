@@ -3,7 +3,7 @@ import avatar from '@/assets/images/default.png';
 </script>
 
 <template>
-    <div class="fixed w-full flex items-center justify-between bg-white h-16 pl-20 pr-5">
+    <div class="fixed w-full flex items-center justify-between bg-white h-16 pl-20 pr-5 shadow-md">
         <button
             class="cursor-pointer bg-gray-100 py-2 px-4 rounded-lg font-medium hover:bg-gray-100 text-sky-500 transition">
             Accesos &nbsp; <i class="fa-solid fa-angle-down font-light"></i>
